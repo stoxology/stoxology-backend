@@ -58,7 +58,7 @@ public class Medium______ {
     @JsonProperty("source_status_id_str")
     private String sourceStatusIdStr;
     @JsonProperty("source_user_id")
-    private Integer sourceUserId;
+    private Long sourceUserId;
     @JsonProperty("source_user_id_str")
     private String sourceUserIdStr;
     @JsonIgnore
@@ -310,7 +310,7 @@ public class Medium______ {
      *     The sourceUserId
      */
     @JsonProperty("source_user_id")
-    public Integer getSourceUserId() {
+    public Long getSourceUserId() {
         return sourceUserId;
     }
 
@@ -320,7 +320,7 @@ public class Medium______ {
      *     The source_user_id
      */
     @JsonProperty("source_user_id")
-    public void setSourceUserId(Integer sourceUserId) {
+    public void setSourceUserId(Long sourceUserId) {
         this.sourceUserId = sourceUserId;
     }
 
