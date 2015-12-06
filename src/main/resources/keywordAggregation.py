@@ -22,11 +22,11 @@ def top_ten( data, timestamp ):
 
 	rawkeywords.sort(key=lambda x: x["score"], reverse=True)
 
-	topten = rawkeywords[:5]
+	topten = rawkeywords[:2]
 
 	return_object = { "timestamp" : timestamp, "list" : topten}
 
-	return [return_object]
+	return return_object
 
 def grade_relevance( n ) :
 	if n < 0.5 :

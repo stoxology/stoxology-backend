@@ -3,45 +3,46 @@ from datetime import datetime, timedelta
 
 import keywordAggregation
 
-def filter_keyword( object ) :
-	with open( object ) as data_file:    
-	 	    data = json.load(data_file)
+#def filter_keyword( object ) :
 
-	batch = {} 
-	batch["article_extraction"] = [] #This is a list of json-s sorted in weekly basis
+with open( 'mock.json' ) as data_file:    
+ 	    data = json.load(data_file)
 
-	front_end_object = {}
-	front_end_object["keyword_lists"] = []
+batch = {} 
+batch["article_extraction"] = [] #This is a list of json-s sorted in weekly basis
 
-	articles_list = data["article_extraction"]
+front_end_object = {}
+front_end_object["keyword_lists"] = []
 
-	first_article = articles_list[1]
+articles_list = data["article_extraction"]
 
-	start_date = datetime.strptime( first_article["timestamp"], "%Y-%m-%d")
-	start_date_str = first_article["timestamp"]
+first_article = articles_list[1]
 
-	# Sort dates by 10-day periods
-	i = 0
-	for article in articles_list :
-		current_date = datetime.strptime( article["timestamp"], "%Y-%m-%d")
-		if current_date < start_date + timedelta(days=10) :
-			batch["article_extraction"].append(article)
+start_date = datetime.strptime( first_article["timestamp"], "%Y-%m-%d")
+start_date_str = first_article["timestamp"]
 
-		else :
-			start_date = current_date
-			start_date_str = article["timestamp"]
+# Sort dates by 10-day periods
+i = 0
+for article in articles_list :
+	current_date = datetime.strptime( article["timestamp"], "%Y-%m-%d")
+	if current_date < start_date + timedelta(days=10) :
+		batch["article_extraction"].append(article)
 
-			currentlist = keywordAggregation.top_ten( batch, start_date_str)
-			front_end_object["keyword_lists"].append(currentlist)
-			front_end_object
+	else :
+		start_date = current_date
+		start_date_str = article["timestamp"]
 
-			batch["article_extraction"] = []
-			batch["article_extraction"].append(article)
+		currentlist = keywordAggregation.top_ten( batch, start_date_str)
+		front_end_object["keyword_lists"].append(currentlist)
+		front_end_object
 
-	#remaining batch
-	currentlist = keywordAggregation.top_ten( batch, start_date_str )		
-	front_end_object["keyword_lists"].append(currentlist)
+		batch["article_extraction"] = []
+		batch["article_extraction"].append(article)
 
-	with open('front_end_input.json', 'w') as outfile:
-	    json.dump(front_end_object, outfile)
+#remaining batch
+currentlist = keywordAggregation.top_ten( batch, start_date_str )		
+front_end_object["keyword_lists"].append(currentlist)
+
+with open('front_end_input.json', 'w') as outfile:
+    json.dump(front_end_object, outfile, indent=4)
 
