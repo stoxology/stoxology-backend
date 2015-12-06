@@ -1,24 +1,37 @@
 import json
 
-with open('mock.json') as data_file:    
-    data = json.load(data_file)
+# This function takes a list of article objects and lists the top ten keywords aggregated
 
-articles_list = data["list_of_keywords"]
+def top_ten( data ):
 
-rawkeywords = []
+	articles_list = data["list_of_keywords"]
 
-for article in articles_list:
-	tweet = article["tweet"]
-	like = article["like"]
-	keywordlist = article["keywords"]
-	for keyword in keywordlist:
-		newkeyword = {}
-		newkeyword["keyword"] = keyword["text"]
-		newkeyword["score"] = (float(tweet) + float(like)) * float(keyword["relevance"])
-		rawkeywords.append(newkeyword)
+	rawkeywords = []
 
-rawkeywords.sort(key=lambda x: x["score"], reverse=True)
+	for article in articles_list:
+		tweet = article["tweet"]
+		like = article["like"]
+		keywordlist = article["keywords"]
+		for keyword in keywordlist:
+			newkeyword = {}
+			newkeyword["keyword"] = keyword["text"]
+			grade = grade_relevance( float(keyword["relevance"]) )
+			newkeyword["score"] = (float(tweet) + float(like)) * grade
+			if grade > 0 :
+				rawkeywords.append(newkeyword)
 
-topten = rawkeywords[:10]
+	rawkeywords.sort(key=lambda x: x["score"], reverse=True)
 
-print(topten)
+	topten = rawkeywords[:10]
+
+	return [topten]
+
+def grade_relevance( n ) :
+	if n < 0.5 :
+		result = 0
+	elif n > 0.9 :
+		result = 1.5
+	else :
+		result = 1
+	return result
+
