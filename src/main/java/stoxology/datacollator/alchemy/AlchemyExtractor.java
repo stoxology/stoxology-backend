@@ -29,7 +29,7 @@ public class AlchemyExtractor {
 	public static final String FULL_TARGETED_SENTIMENT = "http://gateway-a.watsonplatform.net/calls/url/URLGetTargetedSentiment"
 			+ "?apikey=" + API_KEY + "&outputMode=json&url=%s&targets=%s";
 
-	public String extractAll(String url) {
+	public KeywordResult extractAll(String url) {
 		String data = Utility.getUrlData(String.format(FULL_COMBINED, url));
 
 		AlchemyCombined alchemyData = Utility.convertToObject(AlchemyCombined.class, data);
@@ -46,17 +46,7 @@ public class AlchemyExtractor {
 		String sentimentData = Utility.getUrlData(apiUrl);
 		AlchemyTargetedSentiment targetedSentiment = Utility.convertToObject(AlchemyTargetedSentiment.class, sentimentData);
 
-		KeywordResult result = extractKeywordDetails(combineResults(alchemyData, targetedSentiment), alchemyData);
-
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			return mapper.writeValueAsString(result);
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return "FAILED";
+		return extractKeywordDetails(combineResults(alchemyData, targetedSentiment), alchemyData);
 	}
 
 	private KeywordResult extractKeywordDetails(List<CombinedKeywordSentiment> combined, AlchemyCombined alchemyData) {

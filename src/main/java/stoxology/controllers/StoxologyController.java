@@ -25,6 +25,6 @@ public class StoxologyController {
     
     @RequestMapping("/alchemy")
     public String getAlchemy(@RequestParam(value="url") String url) {
-    	return alchemy.extractAll(url);
+    	return "lel";
     }
 }

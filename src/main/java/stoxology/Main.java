@@ -1,11 +1,15 @@
 package stoxology;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import stoxology.datacollator.DataRetrieval;
 import stoxology.datacollator.twitterapi.TwitterDataRetrievalImpl;
@@ -23,8 +27,27 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 
 		DataRetrieval twitterDataRet = new TwitterDataRetrievalImpl();
-		//Example[] twitterData = twitterDataRet.GetData();
-		List<TwitterDataExtract> tde = twitterDataRet.GetData();
+		AlchemyExtractor alcExtract = new AlchemyExtractor();
+		List<TwitterDataExtract> twitterData = twitterDataRet.GetData();
+		
+		for(TwitterDataExtract tde : twitterData)
+		{
+			for (String url : tde.getUrlsOfInterest())
+			{
+				tde.getKeywordResults().add(alcExtract.extractAll(url));
+			}
+		}
+		
+		ObjectMapper mapper = new ObjectMapper();
+        try {
+            String jsonResult = mapper.writeValueAsString(twitterData);
+            PrintWriter out = new PrintWriter("TwitterJSONData.txt");
+            out.println(jsonResult);
+            out.close();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }               
 	}
 
 	@Bean

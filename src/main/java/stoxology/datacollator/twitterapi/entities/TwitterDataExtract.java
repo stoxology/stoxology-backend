@@ -3,12 +3,15 @@ package stoxology.datacollator.twitterapi.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import stoxology.datacollator.alchemy.entities.KeywordResult;
+
 public class TwitterDataExtract {
 
 	private List<String> urlsOfInterest;
 	private int retweetCount;
 	private int favouriteCount;
 	private String createdAt;
+	private List<KeywordResult> keywordResults;
 	
 	public List<String> getUrlsOfInterest() {
 		if (urlsOfInterest == null)
@@ -36,4 +39,12 @@ public class TwitterDataExtract {
 	public void setCreatedAt(String createdAt) {
 		this.createdAt = createdAt;
 	}	
+	public List<KeywordResult> getKeywordResults() {
+		if (keywordResults == null)
+			keywordResults = new ArrayList<KeywordResult>();
+		return keywordResults;
+	}
+	public void setKeywordResults(List<KeywordResult> keywordResults) {
+		this.keywordResults = keywordResults;
+	}
 }
