@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Medium______ {
 
     @JsonProperty("id")
-    private Integer id;
+    private Long id;
     @JsonProperty("id_str")
     private String idStr;
     @JsonProperty("indices")
@@ -54,7 +54,7 @@ public class Medium______ {
     @JsonProperty("sizes")
     private Sizes___ sizes;
     @JsonProperty("source_status_id")
-    private Integer sourceStatusId;
+    private Long sourceStatusId;
     @JsonProperty("source_status_id_str")
     private String sourceStatusIdStr;
     @JsonProperty("source_user_id")
@@ -70,7 +70,7 @@ public class Medium______ {
      *     The id
      */
     @JsonProperty("id")
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -80,7 +80,7 @@ public class Medium______ {
      *     The id
      */
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -270,7 +270,7 @@ public class Medium______ {
      *     The sourceStatusId
      */
     @JsonProperty("source_status_id")
-    public Integer getSourceStatusId() {
+    public Long getSourceStatusId() {
         return sourceStatusId;
     }
 
@@ -280,7 +280,7 @@ public class Medium______ {
      *     The source_status_id
      */
     @JsonProperty("source_status_id")
-    public void setSourceStatusId(Integer sourceStatusId) {
+    public void setSourceStatusId(Long sourceStatusId) {
         this.sourceStatusId = sourceStatusId;
     }
 

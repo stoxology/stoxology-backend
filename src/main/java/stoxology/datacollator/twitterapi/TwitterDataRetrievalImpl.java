@@ -9,6 +9,8 @@ import org.apache.commons.io.IOUtils;
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
 import stoxology.datacollator.DataRetrieval;
+import stoxology.datacollator.Utility;
+import stoxology.datacollator.twitterapi.entities.Example;
 
 public class TwitterDataRetrievalImpl implements DataRetrieval {
 
@@ -25,7 +27,7 @@ public class TwitterDataRetrievalImpl implements DataRetrieval {
 	 * @inheritDoc
 	 */
 	@Override
-	public void GetData() {
+	public Example[] GetData() {
 		
 		OAuthConsumer consumer = new CommonsHttpOAuthConsumer(ConsumerKey, ConsumerSecret);
 		consumer.setTokenWithSecret(AccessToken, AccessSecret);
@@ -38,12 +40,17 @@ public class TwitterDataRetrievalImpl implements DataRetrieval {
 			HttpResponse response = client.execute(request);
 			int statusCode = response.getStatusLine().getStatusCode();
 	
+			String rawData = IOUtils.toString(response.getEntity().getContent());
+			
 	        System.out.println(statusCode + ":" + response.getStatusLine().getReasonPhrase());
-	        System.out.println(IOUtils.toString(response.getEntity().getContent()));
+	        System.out.println(rawData);
+	        
+	        return Utility.convertToObject(Example[].class, rawData);
 		}
 		catch (Exception e)
 		{
 			//handle something			
 		}
+		return null;
 	}
 }

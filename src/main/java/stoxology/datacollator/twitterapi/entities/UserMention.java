@@ -29,7 +29,7 @@ public class UserMention {
     @JsonProperty("name")
     private String name;
     @JsonProperty("id")
-    private Integer id;
+    private Long id;
     @JsonProperty("id_str")
     private String idStr;
     @JsonProperty("indices")
@@ -83,7 +83,7 @@ public class UserMention {
      *     The id
      */
     @JsonProperty("id")
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -93,7 +93,7 @@ public class UserMention {
      *     The id
      */
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
