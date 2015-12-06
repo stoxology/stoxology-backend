@@ -1,12 +1,15 @@
 package stoxology.datacollator;
 
-import stoxology.datacollator.twitterapi.entities.Example;
+import java.util.List;
+
+import stoxology.datacollator.twitterapi.entities.TwitterDataExtract;
 
 public interface DataRetrieval {
 	
 	/**
-	 * Retrieve raw data from the data source
+	 * Retrieve raw data from the data source 
+	 * ToDo: not really a generic return type, change in future
 	 */
-	public Example[] GetData();
+	public List<TwitterDataExtract> GetData();
 
 }

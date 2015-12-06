@@ -1,5 +1,7 @@
 package stoxology;
 
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +11,7 @@ import stoxology.datacollator.DataRetrieval;
 import stoxology.datacollator.twitterapi.TwitterDataRetrievalImpl;
 import stoxology.datacollator.twitterapi.entities.Entities;
 import stoxology.datacollator.twitterapi.entities.Example;
+import stoxology.datacollator.twitterapi.entities.TwitterDataExtract;
 import stoxology.datacollator.alchemy.AlchemyExtractor;
 
 @SpringBootApplication
@@ -20,7 +23,8 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 
 		DataRetrieval twitterDataRet = new TwitterDataRetrievalImpl();
-		Example[] twitterData = twitterDataRet.GetData();
+		//Example[] twitterData = twitterDataRet.GetData();
+		List<TwitterDataExtract> tde = twitterDataRet.GetData();
 	}
 
 	@Bean

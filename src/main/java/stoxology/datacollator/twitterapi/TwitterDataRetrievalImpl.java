@@ -1,5 +1,8 @@
 package stoxology.datacollator.twitterapi;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -11,6 +14,8 @@ import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
 import stoxology.datacollator.DataRetrieval;
 import stoxology.datacollator.Utility;
 import stoxology.datacollator.twitterapi.entities.Example;
+import stoxology.datacollator.twitterapi.entities.TwitterDataExtract;
+import stoxology.datacollator.twitterapi.entities.Url_____;
 
 public class TwitterDataRetrievalImpl implements DataRetrieval {
 
@@ -27,8 +32,36 @@ public class TwitterDataRetrievalImpl implements DataRetrieval {
 	 * @inheritDoc
 	 */
 	@Override
-	public Example[] GetData() {
+	public List<TwitterDataExtract> GetData() {
 		
+		Example[] tweetData = GetTweets();
+		
+		if (tweetData == null)
+			return new ArrayList<TwitterDataExtract>();
+		
+		List<TwitterDataExtract> twitterDataExtracts = new ArrayList<TwitterDataExtract>();
+		
+		for(Example tweet : tweetData)
+		{
+			TwitterDataExtract tde = new TwitterDataExtract();
+			for (Url_____ url : tweet.getEntities().getUrls())
+			{
+				tde.getUrlsOfInterest().add(url.getUrl());
+			}
+			tde.setFavouriteCount(tweet.getFavoriteCount());
+			tde.setRetweetCount(tweet.getRetweetCount());
+			tde.setCreatedAt(tweet.getCreatedAt());
+			twitterDataExtracts.add(tde);
+		}		
+		return twitterDataExtracts;
+	}
+	
+	/**
+	 * Retrieves tweet raw data for a (currently hardcoded) source 
+	 * @return An array of populated Example objects
+	 */
+	private Example[] GetTweets()
+	{
 		OAuthConsumer consumer = new CommonsHttpOAuthConsumer(ConsumerKey, ConsumerSecret);
 		consumer.setTokenWithSecret(AccessToken, AccessSecret);
 		HttpGet request = new HttpGet("https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=ISW&screen_name=TheStudyofWar");
@@ -49,7 +82,9 @@ public class TwitterDataRetrievalImpl implements DataRetrieval {
 		}
 		catch (Exception e)
 		{
-			//handle something			
+			//handle something	
+			System.out.println("An exception occurred");
+			System.out.println(e.toString());
 		}
 		return null;
 	}
