@@ -15,14 +15,9 @@ public class StoxologyController {
 	
     @RequestMapping("/")
 	public String index() {	
-		return "Greetings from Spring Boot!";
+		return "Greetings from Spring Foot!";
 	}
     
-    @RequestMapping("/alchemy/keyword")
-    public String getAlchemyKeywords(@RequestParam(value="url") String url) {
-    	return alchemy.extractUrlKeywords(url);
-    }
-
     @RequestMapping("/alchemy/sentiment")
     public String getAlchemySentiments(@RequestParam(value="url") String url) {
     	return alchemy.extractSentiment(url);

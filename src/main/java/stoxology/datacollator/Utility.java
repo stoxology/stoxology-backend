@@ -7,7 +7,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class WebExtractor {
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class Utility {
 	
 	public static String getUrlData(String apiUrl) {
 
@@ -48,5 +52,27 @@ public class WebExtractor {
 			e.printStackTrace();
 			return "IO Exception.";
 		}
+	}
+	
+	public static <T> T convertToObject(Class<T> clazz, String data) {
+		T model = null;
+
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			model = mapper.readValue(data, clazz);
+		} catch (JsonParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		return model;
 	}
 }

@@ -1,5 +1,5 @@
 
-package stoxology.datacollator.alchemy.domain.keyword;
+package stoxology.datacollator.alchemy.domain.combined;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,9 +21,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "url",
     "totalTransactions",
     "language",
+    "docSentiment",
     "keywords"
 })
-public class AlchemyKeyword {
+public class AlchemyCombined {
 
     @JsonProperty("status")
     private String status;
@@ -35,6 +36,8 @@ public class AlchemyKeyword {
     private String totalTransactions;
     @JsonProperty("language")
     private String language;
+    @JsonProperty("docSentiment")
+    private DocSentiment docSentiment;
     @JsonProperty("keywords")
     private List<Keyword> keywords = new ArrayList<Keyword>();
     @JsonIgnore
@@ -138,6 +141,26 @@ public class AlchemyKeyword {
     @JsonProperty("language")
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    /**
+     * 
+     * @return
+     *     The docSentiment
+     */
+    @JsonProperty("docSentiment")
+    public DocSentiment getDocSentiment() {
+        return docSentiment;
+    }
+
+    /**
+     * 
+     * @param docSentiment
+     *     The docSentiment
+     */
+    @JsonProperty("docSentiment")
+    public void setDocSentiment(DocSentiment docSentiment) {
+        this.docSentiment = docSentiment;
     }
 
     /**
