@@ -9,5 +9,4 @@ public class DataCleanserImpl implements DataCleanser {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }

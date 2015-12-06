@@ -1,5 +1,5 @@
 
-package stoxology.datacollator.alchemy.domain.combined;
+package stoxology.datacollator.alchemy.entities;
 
 import java.util.ArrayList;
 import java.util.HashMap;

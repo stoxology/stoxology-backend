@@ -1,5 +1,5 @@
 
-package stoxology.datacollator.alchemy.domain.combined;
+package stoxology.datacollator.alchemy.entities;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,39 +14,39 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "type",
+    "mixed",
     "score",
-    "mixed"
+    "type"
 })
 public class DocSentiment {
 
-    @JsonProperty("type")
-    private String type;
-    @JsonProperty("score")
-    private String score;
     @JsonProperty("mixed")
     private String mixed;
+    @JsonProperty("score")
+    private String score;
+    @JsonProperty("type")
+    private String type;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
-     *     The type
+     *     The mixed
      */
-    @JsonProperty("type")
-    public String getType() {
-        return type;
+    @JsonProperty("mixed")
+    public String getMixed() {
+        return mixed;
     }
 
     /**
      * 
-     * @param type
-     *     The type
+     * @param mixed
+     *     The mixed
      */
-    @JsonProperty("type")
-    public void setType(String type) {
-        this.type = type;
+    @JsonProperty("mixed")
+    public void setMixed(String mixed) {
+        this.mixed = mixed;
     }
 
     /**
@@ -72,21 +72,21 @@ public class DocSentiment {
     /**
      * 
      * @return
-     *     The mixed
+     *     The type
      */
-    @JsonProperty("mixed")
-    public String getMixed() {
-        return mixed;
+    @JsonProperty("type")
+    public String getType() {
+        return type;
     }
 
     /**
      * 
-     * @param mixed
-     *     The mixed
+     * @param type
+     *     The type
      */
-    @JsonProperty("mixed")
-    public void setMixed(String mixed) {
-        this.mixed = mixed;
+    @JsonProperty("type")
+    public void setType(String type) {
+        this.type = type;
     }
 
     @JsonAnyGetter
