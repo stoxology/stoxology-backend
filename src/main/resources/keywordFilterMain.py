@@ -3,30 +3,46 @@ from datetime import datetime, timedelta
 
 import keywordAggregation
 
-with open( 'mock.json' ) as data_file:    
- 	    data = json.load(data_file)
+def filter_keyword( input_object ) :
 
+	with open( input_object ) as data_file:    
+	 	    data = json.load(data_file)
 
-batch = {} 
-batch["list_of_keywords"] = [] #This is a list of json-s sorted in weekly basis
+	batch = {} 
+	batch["article_extraction"] = [] #This is a list of json-s sorted in weekly basis
 
-articles_list = data["list_of_keywords"]
+	front_end_object = {}
+	front_end_object["keyword_lists"] = []
 
-first_article = articles_list[1]
+	articles_list = data["article_extraction"]
 
-start_date = datetime.strptime( first_article["timestamp"], "%Y-%m-%d")
+	first_article = articles_list[1]
 
-# Sort dates by 10-day periods
-i = 0
-for article in articles_list :
-	current_date = datetime.strptime( article["timestamp"], "%Y-%m-%d")
-	if current_date < start_date + timedelta(days=10) :
-		batch["list_of_keywords"].append(article)
+	start_date = datetime.strptime( first_article["timestamp"], "%Y-%m-%d")
+	start_date_str = first_article["timestamp"]
 
-	else :
-		print( keywordAggregation.top_ten( batch ) )
-		start_date = current_date
-		batch["list_of_keywords"] = []
-		batch["list_of_keywords"].append(article)
+	# Sort dates by 10-day periods
+	i = 0
+	for article in articles_list :
+		current_date = datetime.strptime( article["timestamp"], "%Y-%m-%d")
+		if current_date < start_date + timedelta(days=10) :
+			batch["article_extraction"].append(article)
 
-print( keywordAggregation.top_ten( batch ) )		
+		else :
+			start_date = current_date
+			start_date_str = article["timestamp"]
+
+			currentlist = keywordAggregation.top_ten( batch, start_date_str)
+			front_end_object["keyword_lists"].append(currentlist)
+			front_end_object
+
+			batch["article_extraction"] = []
+			batch["article_extraction"].append(article)
+
+	#remaining batch
+	currentlist = keywordAggregation.top_ten( batch, start_date_str )		
+	front_end_object["keyword_lists"].append(currentlist)
+
+	with open('front_end_input.json', 'w') as outfile:
+	    json.dump(front_end_object, outfile, indent=4)
+

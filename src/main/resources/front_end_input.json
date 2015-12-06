@@ -1,0 +1,30 @@
+{
+    "keyword_lists": [
+        {
+            "timestamp": "2015-11-12", 
+            "list": [
+                {
+                    "score": 63.0, 
+                    "keyword": "ISIS"
+                }, 
+                {
+                    "score": 63.0, 
+                    "keyword": "Russian airstrikes"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2015-11-12", 
+            "list": [
+                {
+                    "score": 93.0, 
+                    "keyword": "targets"
+                }, 
+                {
+                    "score": 93.0, 
+                    "keyword": "medium-range cruise missiles"
+                }
+            ]
+        }
+    ]
+}

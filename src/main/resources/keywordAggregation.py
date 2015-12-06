@@ -2,9 +2,9 @@ import json
 
 # This function takes a list of article objects and lists the top ten keywords aggregated
 
-def top_ten( data ):
+def top_ten( data, timestamp ):
 
-	articles_list = data["list_of_keywords"]
+	articles_list = data["article_extraction"]
 
 	rawkeywords = []
 
@@ -22,9 +22,11 @@ def top_ten( data ):
 
 	rawkeywords.sort(key=lambda x: x["score"], reverse=True)
 
-	topten = rawkeywords[:10]
+	topten = rawkeywords[:2]
 
-	return [topten]
+	return_object = { "timestamp" : timestamp, "list" : topten}
+
+	return return_object
 
 def grade_relevance( n ) :
 	if n < 0.5 :
