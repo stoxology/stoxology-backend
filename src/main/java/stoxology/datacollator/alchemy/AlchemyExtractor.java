@@ -1,15 +1,10 @@
 package stoxology.datacollator.alchemy;
 
-import java.io.IOException;
-
 import stoxology.datacollator.Utility;
-import stoxology.datacollator.alchemy.domain.combined.AlchemyCombined;
-import stoxology.datacollator.alchemy.domain.combined.Keyword;
-import stoxology.datacollator.alchemy.domain.sentiment.AlchemySentiment;
-
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import stoxology.datacollator.alchemy.entities.AlchemyCombined;
+import stoxology.datacollator.alchemy.entities.AlchemySentiment;
+import stoxology.datacollator.alchemy.entities.AlchemyTargetedSentiment;
+import stoxology.datacollator.alchemy.entities.Keyword;
 
 public class AlchemyExtractor {
 	public static final String API_KEY = "4bfcda315cafac05e00c8eeddb4a2b2b034584d2";
@@ -40,12 +35,13 @@ public class AlchemyExtractor {
 		
 		String sentimentData = Utility.getUrlData(apiUrl);
 		
+		AlchemyTargetedSentiment targetedSentiment = Utility.convertToObject(AlchemyTargetedSentiment.class, sentimentData);
+		
+		
+		
+		
+		// TODO: Combine.
 		return sentimentData;
-		
-		
-		// TODO: Put this together.
-
-//		return data;
 	}
 
 	public String extractSentiment(String url) {

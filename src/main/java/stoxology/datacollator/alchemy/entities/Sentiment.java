@@ -1,5 +1,5 @@
 
-package stoxology.datacollator.alchemy.domain.sentiment;
+package stoxology.datacollator.alchemy.entities;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,40 +14,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "mixed",
     "score",
     "type"
 })
-public class DocSentiment {
+public class Sentiment {
 
-    @JsonProperty("mixed")
-    private String mixed;
     @JsonProperty("score")
     private String score;
     @JsonProperty("type")
     private String type;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    /**
-     * 
-     * @return
-     *     The mixed
-     */
-    @JsonProperty("mixed")
-    public String getMixed() {
-        return mixed;
-    }
-
-    /**
-     * 
-     * @param mixed
-     *     The mixed
-     */
-    @JsonProperty("mixed")
-    public void setMixed(String mixed) {
-        this.mixed = mixed;
-    }
 
     /**
      * 

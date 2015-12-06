@@ -1,5 +1,5 @@
 
-package stoxology.datacollator.alchemy.domain.combined;
+package stoxology.datacollator.alchemy.entities;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,17 +14,37 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "text",
-    "relevance"
+    "sentiment",
+    "text"
 })
-public class Keyword {
+public class Result {
 
+    @JsonProperty("sentiment")
+    private Sentiment sentiment;
     @JsonProperty("text")
     private String text;
-    @JsonProperty("relevance")
-    private String relevance;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    /**
+     * 
+     * @return
+     *     The sentiment
+     */
+    @JsonProperty("sentiment")
+    public Sentiment getSentiment() {
+        return sentiment;
+    }
+
+    /**
+     * 
+     * @param sentiment
+     *     The sentiment
+     */
+    @JsonProperty("sentiment")
+    public void setSentiment(Sentiment sentiment) {
+        this.sentiment = sentiment;
+    }
 
     /**
      * 
@@ -44,26 +64,6 @@ public class Keyword {
     @JsonProperty("text")
     public void setText(String text) {
         this.text = text;
-    }
-
-    /**
-     * 
-     * @return
-     *     The relevance
-     */
-    @JsonProperty("relevance")
-    public String getRelevance() {
-        return relevance;
-    }
-
-    /**
-     * 
-     * @param relevance
-     *     The relevance
-     */
-    @JsonProperty("relevance")
-    public void setRelevance(String relevance) {
-        this.relevance = relevance;
     }
 
     @JsonAnyGetter
