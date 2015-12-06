@@ -1,7 +1,9 @@
 
-package stoxology.datacollator.alchemy.domain.keyword;
+package stoxology.datacollator.twitterapi.entities;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -14,56 +16,33 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "relevance",
-    "text"
+    "media"
 })
-public class Keyword {
+public class ExtendedEntities {
 
-    @JsonProperty("relevance")
-    private String relevance;
-    @JsonProperty("text")
-    private String text;
+    @JsonProperty("media")
+    private List<Medium__> media = new ArrayList<Medium__>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
-     *     The relevance
+     *     The media
      */
-    @JsonProperty("relevance")
-    public String getRelevance() {
-        return relevance;
+    @JsonProperty("media")
+    public List<Medium__> getMedia() {
+        return media;
     }
 
     /**
      * 
-     * @param relevance
-     *     The relevance
+     * @param media
+     *     The media
      */
-    @JsonProperty("relevance")
-    public void setRelevance(String relevance) {
-        this.relevance = relevance;
-    }
-
-    /**
-     * 
-     * @return
-     *     The text
-     */
-    @JsonProperty("text")
-    public String getText() {
-        return text;
-    }
-
-    /**
-     * 
-     * @param text
-     *     The text
-     */
-    @JsonProperty("text")
-    public void setText(String text) {
-        this.text = text;
+    @JsonProperty("media")
+    public void setMedia(List<Medium__> media) {
+        this.media = media;
     }
 
     @JsonAnyGetter

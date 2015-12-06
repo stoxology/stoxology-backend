@@ -1,5 +1,5 @@
 
-package stoxology.datacollator.alchemy.domain.sentiment;
+package stoxology.datacollator.twitterapi.entities;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,79 +14,79 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "mixed",
-    "score",
-    "type"
+    "w",
+    "h",
+    "resize"
 })
-public class DocSentiment {
+public class Large__ {
 
-    @JsonProperty("mixed")
-    private String mixed;
-    @JsonProperty("score")
-    private String score;
-    @JsonProperty("type")
-    private String type;
+    @JsonProperty("w")
+    private Integer w;
+    @JsonProperty("h")
+    private Integer h;
+    @JsonProperty("resize")
+    private String resize;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * 
      * @return
-     *     The mixed
+     *     The w
      */
-    @JsonProperty("mixed")
-    public String getMixed() {
-        return mixed;
+    @JsonProperty("w")
+    public Integer getW() {
+        return w;
     }
 
     /**
      * 
-     * @param mixed
-     *     The mixed
+     * @param w
+     *     The w
      */
-    @JsonProperty("mixed")
-    public void setMixed(String mixed) {
-        this.mixed = mixed;
-    }
-
-    /**
-     * 
-     * @return
-     *     The score
-     */
-    @JsonProperty("score")
-    public String getScore() {
-        return score;
-    }
-
-    /**
-     * 
-     * @param score
-     *     The score
-     */
-    @JsonProperty("score")
-    public void setScore(String score) {
-        this.score = score;
+    @JsonProperty("w")
+    public void setW(Integer w) {
+        this.w = w;
     }
 
     /**
      * 
      * @return
-     *     The type
+     *     The h
      */
-    @JsonProperty("type")
-    public String getType() {
-        return type;
+    @JsonProperty("h")
+    public Integer getH() {
+        return h;
     }
 
     /**
      * 
-     * @param type
-     *     The type
+     * @param h
+     *     The h
      */
-    @JsonProperty("type")
-    public void setType(String type) {
-        this.type = type;
+    @JsonProperty("h")
+    public void setH(Integer h) {
+        this.h = h;
+    }
+
+    /**
+     * 
+     * @return
+     *     The resize
+     */
+    @JsonProperty("resize")
+    public String getResize() {
+        return resize;
+    }
+
+    /**
+     * 
+     * @param resize
+     *     The resize
+     */
+    @JsonProperty("resize")
+    public void setResize(String resize) {
+        this.resize = resize;
     }
 
     @JsonAnyGetter

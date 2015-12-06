@@ -1,5 +1,5 @@
 
-package stoxology.datacollator.alchemy.domain.keyword;
+package stoxology.datacollator.alchemy.entities;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,9 +21,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "url",
     "totalTransactions",
     "language",
-    "keywords"
+    "results"
 })
-public class AlchemyKeyword {
+public class AlchemyTargetedSentiment {
 
     @JsonProperty("status")
     private String status;
@@ -35,8 +35,8 @@ public class AlchemyKeyword {
     private String totalTransactions;
     @JsonProperty("language")
     private String language;
-    @JsonProperty("keywords")
-    private List<Keyword> keywords = new ArrayList<Keyword>();
+    @JsonProperty("results")
+    private List<Result> results = new ArrayList<Result>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -143,21 +143,21 @@ public class AlchemyKeyword {
     /**
      * 
      * @return
-     *     The keywords
+     *     The results
      */
-    @JsonProperty("keywords")
-    public List<Keyword> getKeywords() {
-        return keywords;
+    @JsonProperty("results")
+    public List<Result> getResults() {
+        return results;
     }
 
     /**
      * 
-     * @param keywords
-     *     The keywords
+     * @param results
+     *     The results
      */
-    @JsonProperty("keywords")
-    public void setKeywords(List<Keyword> keywords) {
-        this.keywords = keywords;
+    @JsonProperty("results")
+    public void setResults(List<Result> results) {
+        this.results = results;
     }
 
     @JsonAnyGetter

@@ -1,7 +1,9 @@
 
-package stoxology.datacollator.alchemy.domain.sentiment;
+package stoxology.datacollator.alchemy.entities;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -19,9 +21,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "url",
     "totalTransactions",
     "language",
-    "docSentiment"
+    "docSentiment",
+    "keywords"
 })
-public class AlchemySentiment {
+public class AlchemyCombined {
 
     @JsonProperty("status")
     private String status;
@@ -35,6 +38,8 @@ public class AlchemySentiment {
     private String language;
     @JsonProperty("docSentiment")
     private DocSentiment docSentiment;
+    @JsonProperty("keywords")
+    private List<Keyword> keywords = new ArrayList<Keyword>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -156,6 +161,26 @@ public class AlchemySentiment {
     @JsonProperty("docSentiment")
     public void setDocSentiment(DocSentiment docSentiment) {
         this.docSentiment = docSentiment;
+    }
+
+    /**
+     * 
+     * @return
+     *     The keywords
+     */
+    @JsonProperty("keywords")
+    public List<Keyword> getKeywords() {
+        return keywords;
+    }
+
+    /**
+     * 
+     * @param keywords
+     *     The keywords
+     */
+    @JsonProperty("keywords")
+    public void setKeywords(List<Keyword> keywords) {
+        this.keywords = keywords;
     }
 
     @JsonAnyGetter
