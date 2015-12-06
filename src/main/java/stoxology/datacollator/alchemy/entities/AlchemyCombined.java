@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "url",
     "totalTransactions",
     "language",
+    "publicationDate",
     "docSentiment",
     "keywords"
 })
@@ -36,6 +37,8 @@ public class AlchemyCombined {
     private String totalTransactions;
     @JsonProperty("language")
     private String language;
+    @JsonProperty("publicationDate")
+    private PublicationDate publicationDate;
     @JsonProperty("docSentiment")
     private DocSentiment docSentiment;
     @JsonProperty("keywords")
@@ -141,6 +144,26 @@ public class AlchemyCombined {
     @JsonProperty("language")
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    /**
+     * 
+     * @return
+     *     The publicationDate
+     */
+    @JsonProperty("publicationDate")
+    public PublicationDate getPublicationDate() {
+        return publicationDate;
+    }
+
+    /**
+     * 
+     * @param publicationDate
+     *     The publicationDate
+     */
+    @JsonProperty("publicationDate")
+    public void setPublicationDate(PublicationDate publicationDate) {
+        this.publicationDate = publicationDate;
     }
 
     /**
