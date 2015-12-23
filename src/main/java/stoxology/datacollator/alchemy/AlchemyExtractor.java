@@ -7,9 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import stoxology.datacollator.Utility;
 import stoxology.datacollator.alchemy.entities.AlchemyCombined;
 import stoxology.datacollator.alchemy.entities.AlchemySentiment;
@@ -39,7 +36,11 @@ public class AlchemyExtractor {
 			targetedWords.append(keyword.getText()).append("|");
 		}
 
-		String pipedWords = targetedWords.toString().substring(0, targetedWords.toString().length() - 1);
+		String words = targetedWords.toString();
+		
+		if (words.isEmpty()) return null;
+		
+		String pipedWords = words.substring(0, words.length() - 1);
 		String apiUrl = String.format(FULL_TARGETED_SENTIMENT, url, pipedWords);
 		apiUrl = apiUrl.replace(" ", "%20");
 
@@ -51,34 +52,40 @@ public class AlchemyExtractor {
 
 	private KeywordResult extractKeywordDetails(List<CombinedKeywordSentiment> combined, AlchemyCombined alchemyData) {
 		KeywordResult result = new KeywordResult();
-		
-		String date = alchemyData.getPublicationDate().getDate();
-		date = date.replace('T', '-');
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss", Locale.UK);
-		LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
-		
-		result.setTimestamp(localDateTime.toEpochSecond(ZoneOffset.UTC) + "");
-		
-		for (CombinedKeywordSentiment keywordSentiment : combined) {
-			String sentimentScoreString = keywordSentiment.getResult().getSentiment().getScore();
-			String keywordRelevanceScoreString = keywordSentiment.getKeyword().getRelevance();
-			Double sentimentScore = 0d;
-			Double keywordRelevanceScore = 0d;
 
-			if (sentimentScoreString != null) {
-				sentimentScore = Double.parseDouble(keywordSentiment.getResult().getSentiment().getScore());
+		try {
+			String date = alchemyData.getPublicationDate().getDate();
+			date = date.replace('T', '-');
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss", Locale.UK);
+			LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
+
+			result.setTimestamp(localDateTime.toEpochSecond(ZoneOffset.UTC) + "");
+
+			for (CombinedKeywordSentiment keywordSentiment : combined) {
+				String sentimentScoreString = keywordSentiment.getResult().getSentiment().getScore();
+				String keywordRelevanceScoreString = keywordSentiment.getKeyword().getRelevance();
+				Double sentimentScore = 0d;
+				Double keywordRelevanceScore = 0d;
+
+				if (sentimentScoreString != null) {
+					sentimentScore = Double.parseDouble(keywordSentiment.getResult().getSentiment().getScore());
+				}
+
+				if (keywordRelevanceScoreString != null) {
+					keywordRelevanceScore = Double.parseDouble(keywordSentiment.getKeyword().getRelevance());
+				}
+
+				KeywordDetails detail = new KeywordDetails(keywordSentiment.getKeyword().getText(), keywordRelevanceScore, sentimentScore,
+						keywordSentiment.getResult().getSentiment().getType());
+				result.addKeywordDetails(detail);
 			}
 
-			if (keywordRelevanceScoreString != null) {
-				keywordRelevanceScore = Double.parseDouble(keywordSentiment.getKeyword().getRelevance());
-			}
-
-			KeywordDetails detail = new KeywordDetails(keywordSentiment.getKeyword().getText(), keywordRelevanceScore, sentimentScore,
-					keywordSentiment.getResult().getSentiment().getType());
-			result.addKeywordDetails(detail);
+			return result;
+		} catch (Exception e) {
+			// do nothing..
 		}
-
-		return result;
+		
+		return null;
 	}
 
 	private List<CombinedKeywordSentiment> combineResults(AlchemyCombined alchemyData, AlchemyTargetedSentiment targetedSentiment) {

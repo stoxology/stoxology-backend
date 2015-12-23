@@ -8,13 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import stoxology.datacollator.DataRetrieval;
 import stoxology.datacollator.twitterapi.TwitterDataRetrievalImpl;
-import stoxology.datacollator.twitterapi.entities.Entities;
-import stoxology.datacollator.twitterapi.entities.Example;
 import stoxology.datacollator.twitterapi.entities.TwitterDataExtract;
 import stoxology.datacollator.alchemy.AlchemyExtractor;
 
