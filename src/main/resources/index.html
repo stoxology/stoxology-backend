@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
+</style>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+<script>
+
+//Date parser
+var parseDate = d3.time.format("%Y/%m/%d");
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
+
+var x = d3.time.scale.utc()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var color = d3.scale.category10();
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("test.csv", type, function(error, data) {
+  if (error) throw error;
+
+  x.domain([ new Date(data[ data.length - 1].date), new Date(data[0].date)])
+    .rangeRound([0, width - margin.left - margin.right]);
+
+  ymin = d3.min(data, function(d) { return d.price - 10.0; });
+  ymax = d3.max(data, function(d) { return d.price + 10.0; });
+
+  y.domain([ ymin, ymax ]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("Date");
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Price")
+
+  // svg.selectAll(".dot")
+  //     .data(data)
+  //   .enter().append("circle")
+  //     .attr("class", "dot")
+  //     .attr("r", function(d) { return d.score/10.0; })
+  //     .attr("cx", function(d) { return x(d.date); })
+  //     .attr("cy", function(d) { return y(d.price); })
+  //     .style("fill", function(d) { return color( d.sentiment ); });
+
+  var node = svg.selectAll("g")
+                .data(data)
+                .enter()
+                .append("g");
+
+  node.append("circle")
+    .attr("class", "dot")
+    .attr("cx", function(d) { return x(d.date); })
+    .attr("cy", function(d) { return y(d.price); })
+    .attr("r", function(d) { return d.score/10.0; })
+    .style("fill", function(d) { return color(d.sentiment); });
+
+  node.append("text")
+    .attr("x", function(d) { return x(d.date); })
+    .attr("y", function(d) { return y(d.price); })
+  .text( function(d) { return d.keyword; })
+    .style("font-size","14px");
+
+  var legend = svg.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+});
+
+function type(d) {
+  d.price = +d.price;
+  d.sentiment = d.sentiment;
+  d.score = +d.score;
+  d.date = parseDate.parse(d.date);
+  d.keyword = d.keyword;
+  console.log(d.date);
+  console.log(d.price);
+  console.log(d.score);
+
+  return d;
+}
+
+</script>

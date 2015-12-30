@@ -9,31 +9,34 @@ def top_ten( data, timestamp ):
 	rawkeywords = []
 
 	for article in articles_list:
-		tweet = article["tweet"]
-		like = article["like"]
-		keywordlist = article["keywords"]
-		for keyword in keywordlist:
-			newkeyword = {}
-			newkeyword["keyword"] = keyword["text"]
-			grade = grade_relevance( float(keyword["relevance"]) )
-			newkeyword["score"] = (float(tweet) + float(like)) * grade
-			if grade > 0 :
-				rawkeywords.append(newkeyword)
+		if article["keywordResults"][0] is not None :
+			tweet = article["retweetCount"]
+			like = article["favouriteCount"]
+			keywordlist = article["keywordResults"][0]["keywordDetails"]
+			for keyword in keywordlist:
+				newkeyword = {}
+				newkeyword["keyword"] = keyword["keyword"]
+				newkeyword["url"] = article["urlsOfInterest"]
+				newkeyword["sentiment"] = keyword["type"]
+				grade = grade_relevance( float(keyword["relevanceScore"]) )
+				newkeyword["score"] = ( float(tweet) + float(like) ) * grade
+				if grade > 0 :
+					rawkeywords.append(newkeyword)
 
 	rawkeywords.sort(key=lambda x: x["score"], reverse=True)
 
-	topten = rawkeywords[:2]
+	toplist = rawkeywords[:1]
 
-	return_object = { "timestamp" : timestamp, "list" : topten}
+	return_object = { "timestamp" : timestamp, "list" : toplist }
 
 	return return_object
 
 def grade_relevance( n ) :
 	if n < 0.5 :
 		result = 0
-	elif n > 0.9 :
-		result = 1.5
-	else :
+	elif n > 0.6 :
 		result = 1
+	else :
+		result = 0
 	return result
 
