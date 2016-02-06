@@ -14,6 +14,7 @@ import stoxology.datacollator.DataRetrieval;
 import stoxology.datacollator.twitterapi.TwitterDataRetrievalImpl;
 import stoxology.datacollator.twitterapi.entities.TwitterDataExtract;
 import stoxology.datacollator.alchemy.AlchemyExtractor;
+import stoxology.datacollator.alchemy.entities.KeywordResult;
 
 @SpringBootApplication
 @Configuration
@@ -31,7 +32,12 @@ public class Main {
 		{
 			for (String url : tde.getUrlsOfInterest())
 			{
-				tde.getKeywordResults().add(alcExtract.extractAll(url));
+				KeywordResult keywordResult = alcExtract.extractAll(url);
+				
+				if (keywordResult == null)				
+					continue;				
+				
+				tde.getKeywordResults().add(keywordResult);
 			}
 		}
 		
