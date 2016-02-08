@@ -19,7 +19,7 @@ def top_ten( data, timestamp ):
 				newkeyword["url"] = article["urlsOfInterest"]
 				newkeyword["sentiment"] = keyword["type"]
 				grade = grade_relevance( float(keyword["relevanceScore"]) )
-				newkeyword["score"] = ( float(tweet) + float(like) ) * grade
+				newkeyword["score"] = ( float(tweet) + float(like) )
 				if grade > 0 :
 					rawkeywords.append(newkeyword)
 

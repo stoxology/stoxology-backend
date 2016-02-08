@@ -67,7 +67,7 @@ var parseDate = d3.time.format("%Y/%m/%d");
 
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
-    height = 450 - margin.top - margin.bottom;
+    height = 500 - margin.top - margin.bottom;
 
 var x = d3.time.scale.utc()
     .range([0, width]);
@@ -178,6 +178,7 @@ d3.csv("test.csv", type, function(error, data) {
       .data(color.domain())
     .enter().append("g")
       .attr("class", "legend")
+      .attr("data-legend",function(d) { return sentimentColor(d.sentiment)})
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   legend.append("rect")

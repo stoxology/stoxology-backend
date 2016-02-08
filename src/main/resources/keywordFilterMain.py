@@ -1,6 +1,7 @@
 import json
 import csv
 from datetime import datetime, timedelta
+from decimal import Decimal
 
 import keywordAggregation
 
@@ -23,6 +24,18 @@ def matchPrice( findDate, prices ) :
 			result = float(item[6])
 	return result
 
+def calcDailyReturn( findDate, prices ) :
+	result = 0.0
+	nextItem = prices[1]
+	for item in prices[1:200] :
+		currentDate = datetime.strptime( item[0], '%Y-%m-%d' )
+		if currentDate >= findDate :
+			price0 = float(item[6])
+			price1 = float(nextItem[6])
+			result = Decimal(price1/price0 - 1.0)
+		nextItem = item
+	return round(result,5)
+
 with open( "input_object.json" ) as data_file:    
  	    data_raw = json.load(data_file)
 
@@ -30,16 +43,20 @@ with open( "input_object.json" ) as data_file:
 data = byteify(data_raw)
 
 batch = {} 
-batch["article_extraction"] = [] #This is a list of json-s sorted in weekly basis
+batch["article_extraction"] = [] 
 
 front_end_object = {}
 front_end_object["keyword_lists"] = []
 
 articles_list = data
 
-#Delete empty objects
+#Delete articles with empty keyword results
 for article in list(articles_list) :
-	if article["keywordResults"][0] is None :
+	#print article
+	if article is None :
+		articles_list.remove(article)
+	elif not article["keywordResults"] :
+		print article
 		articles_list.remove(article)
 
 articles_list.sort(key=lambda x: int( x["keywordResults"][0]["timestamp"] ), reverse=True)
@@ -50,6 +67,7 @@ start_date = datetime.fromtimestamp( int(first_article["keywordResults"][0]["tim
 
 # Sort dates by periods
 for article in articles_list :
+	print start_date
 	current_date = datetime.fromtimestamp( int(article["keywordResults"][0]["timestamp"]) )
 	if current_date + timedelta(days=1)  > start_date :
 		batch["article_extraction"].append(article)
@@ -68,6 +86,7 @@ for article in articles_list :
 currentlist = keywordAggregation.top_ten( batch, start_date.strftime('%Y/%m/%d') )		
 front_end_object["keyword_lists"].append(currentlist)
 
+
 #json for front end
 with open('front_end_input.json', 'w') as outfile:
     json.dump(front_end_object, outfile, indent=4)
@@ -80,13 +99,14 @@ with open('prices.csv', 'rb') as f:
 
 #CSV output
 csvData = []
-csvData.append( [ 'date', 'keyword', 'score', 'sentiment', 'price' ])
+csvData.append( [ 'date', 'keyword', 'score', 'sentiment', 'price', 'dailychange' ])
 
 for item in front_end_object["keyword_lists"] :
 	if item["list"] != [] :
 		findDate = datetime.strptime( item["timestamp"], '%Y/%m/%d' )
 		price = matchPrice( findDate, priceList )
-		row = [ item["timestamp"], item["list"][0]["keyword"], item["list"][0]["score"], item["list"][0]["sentiment"], price ]
+		dailychange = calcDailyReturn( findDate, priceList )
+		row = [ item["timestamp"], item["list"][0]["keyword"], item["list"][0]["score"], item["list"][0]["sentiment"], price, dailychange ]
 		csvData.append( row )
 
 with open('test.csv', 'wb') as fp:

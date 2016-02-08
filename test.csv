@@ -1,0 +1,96 @@
+date,keyword,score,sentiment,price,dailychange
+2016/02/03,Aleppo City,130.0,negative,212.919998,-0.01273
+2016/02/02,Newly released drone,138.0,positive,210.449997,0.01174
+2016/02/01,Islamic State,191.0,negative,209.800003,0.0031
+2016/01/30,Iraqi Kurdish officials,49.0,positive,209.800003,0.0031
+2016/01/29,Syrian state-run media,58.0,neutral,211.0,-0.00569
+2016/01/28,ISIS,97.0,negative,206.660004,0.021
+2016/01/27,baggage handler,50.0,negative,207.860001,-0.00577
+2016/01/26,Assad,30.0,negative,209.929993,-0.00986
+2016/01/25,opposition forces,40.0,neutral,211.009995,-0.00512
+2016/01/24,Iraq Situation Report,37.0,negative,211.009995,-0.00512
+2016/01/23,northwestern Latakia province,77.0,negative,211.009995,-0.00512
+2016/01/22,Deir ez-Zour Province,40.0,neutral,212.039993,-0.00486
+2016/01/21,Shiite militias,88.0,negative,210.789993,0.00593
+2016/01/20,Islamic State,38.0,negative,210.399994,0.00185
+2016/01/16,Russian Airstrikes,53.0,negative,215.289993,-0.02271
+2016/01/15,national security,85.0,negative,215.990005,-0.00324
+2016/01/14,Burkina Faso,325.0,negative,216.419998,-0.00199
+2016/01/13,attack,99.0,negative,214.399994,0.00942
+2016/01/12,State John Kerry,66.0,neutral,217.960007,-0.01633
+2016/01/11,opposition groups,47.0,negative,215.350006,0.01212
+2016/01/10,ISIS activity,64.0,negative,215.350006,0.01212
+2016/01/08,Tel Abyad,28.0,neutral,212.910004,0.01146
+2016/01/06,Islamic State,62.0,negative,217.630005,-0.01994
+2016/01/05,North Korea,235.0,negative,218.259995,-0.00289
+2016/01/04,North Korea,793.0,negative,213.210007,0.02369
+2016/01/03,Sheikh Meskin,98.0,neutral,213.210007,0.02369
+2015/12/31,ISIS,175.0,negative,217.149994,-0.01814
+2015/12/30,Aleppo City,71.0,neutral,219.800003,-0.01206
+2015/12/29,Islamic State,40.0,negative,220.470001,-0.00304
+2015/12/28,Jaysh al-Islam,139.0,neutral,218.410004,0.00943
+2015/12/27,ISF,97.0,negative,218.410004,0.00943
+2015/12/26,Islamic State,41.0,negative,218.410004,0.00943
+2015/12/24,Islamic State,157.0,negative,218.559998,-0.00069
+2015/12/23,Shiite militias,30.0,negative,217.929993,0.00289
+2015/12/22,Aleppo Province,27.0,negative,217.929993,0.00289
+2015/12/21,Iranian proxy militias,85.0,negative,215.470001,0.01142
+2015/12/20,Detective Lemm,175.0,negative,215.470001,0.01142
+2015/12/18,security forces,27.0,negative,212.179993,0.01551
+2015/12/17,15-member council reached rare agreement on,500.0,neutral,215.220001,-0.01413
+2015/12/16,Islamic State,94.0,negative,217.5,-0.01048
+2015/12/15,iraqi prime minister,28.0,negative,214.839996,0.01238
+2015/12/14,global terrorism,59.0,negative,216.580002,-0.00803
+2015/12/13,Russian aircraft operating,34.0,neutral,216.580002,-0.00803
+2015/12/11,Russian airstrikes,101.0,negative,217.199997,-0.00285
+2015/12/10,fake syrian passports,449.0,negative,218.880005,-0.00768
+2015/12/09,United States,39.0,negative,217.539993,0.00616
+2015/12/08,service members,122.0,negative,218.809998,-0.0058
+2015/12/07,regime ground operations,35.0,neutral,219.130005,-0.00146
+2015/12/06,Islamic State,302.0,negative,219.130005,-0.00146
+2015/12/04,Tashfeen Malik,299.0,negative,218.389999,0.00339
+2015/12/03,ISIS,268.0,negative,215.460007,0.0136
+2015/12/02,Iraq Situation Report,54.0,negative,218.940002,-0.01589
+2015/12/01,Twitter stores,89.0,positive,220.199997,-0.00572
+2015/11/30,Russia,144.0,negative,219.160004,0.00475
+2015/11/29,Russia,48.0,negative,219.160004,0.00475
+2015/11/27,SPIEGEL ONLINE,36.0,neutral,225.910004,-0.02988
+2015/11/26,Putin,85.0,negative,225.910004,-0.02988
+2015/11/25,joint task force,37.0,negative,224.150003,0.00785
+2015/11/24,Kurdistan Democratic Party,122.0,negative,224.775389,-0.00278
+2015/11/23,Russian air incursions,507.0,negative,224.378318,0.00177
+2015/11/22,terrorist attacks,617.0,negative,224.378318,0.00177
+2015/11/21,air strikes,30.0,negative,224.378318,0.00177
+2015/11/20,facto capital,101.0,negative,224.408098,-0.00013
+2015/11/19,chemical weapons,196.0,negative,222.363153,0.0092
+2015/11/18,United States,113.0,negative,221.588854,0.00349
+2015/11/17,Russian reconnaissance drones,65.0,negative,220.764918,0.00373
+2015/11/16,Syrian refugees,75.0,negative,219.057485,0.00779
+2015/11/15,Russian airstrikes,39.0,negative,219.057485,0.00779
+2015/11/14,ISIS,120.0,negative,219.057485,0.00779
+2015/11/13,François Molins,350.0,neutral,211.602369,0.03523
+2015/11/12,Article Latest Updates,289.0,neutral,212.019298,-0.00197
+2015/11/11,Islamic State,98.0,negative,213.538116,-0.00711
+2015/11/10,Russian airstrikes,56.0,negative,212.505723,0.00486
+2015/11/09,Syrian regime,55.0,negative,213.131109,-0.00293
+2015/11/08,russian airstrikes,76.0,negative,213.131109,-0.00293
+2015/11/05,Mullah Mohammad Rasul,27.0,neutral,217.002619,-0.00901
+2015/11/04,Homs City,40.0,negative,217.230934,-0.00105
+2015/11/03,Ayatollah Ali Khamenei,114.0,neutral,217.300415,-0.00032
+2015/11/02,Islamic State,97.0,negative,218.978068,-0.00766
+2015/10/31,russian airstrikes,90.0,negative,218.978068,-0.00766
+2015/10/30,Russian airstrikes,67.0,neutral,218.223627,0.00346
+2015/10/29,Russian Airstrikes,45.0,negative,216.655171,0.00724
+2015/10/28,Al Jazeera,40.0,negative,219.424777,-0.01262
+2015/10/27,Iranian Al-Quds force,107.0,neutral,221.410162,-0.00897
+2015/10/25,Russian Military Activity,52.0,neutral,219.325516,0.0095
+2015/10/23,Kurdistan Region Security,32.0,neutral,217.717359,0.00739
+2015/10/22,regime ground offensives,76.0,neutral,214.92788,0.01298
+2015/10/21,social media,48.0,negative,210.014054,0.0234
+2015/10/17,regime ground offensives,87.0,neutral,209.100779,-0.00907
+2015/10/15,Islamic State,58.0,negative,207.651441,0.00287
+2015/10/14,Iraq Situation Report,34.0,negative,206.628969,0.00495
+2015/10/09,Russian airstrikes,79.0,negative,211.701629,0.00502
+2015/10/08,NATO,28.0,negative,212.803518,-0.00518
+2015/10/06,Syrian President Bashar,70.0,neutral,208.862527,0.01212
+2015/09/30,special forces,45.0,positive,205.795111,-0.01235

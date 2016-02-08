@@ -1,15 +1,457 @@
 {
     "keyword_lists": [
         {
+            "timestamp": "2016/02/03", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/CMa4NmMpPl"
+                    ], 
+                    "score": 130.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Aleppo City"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/02/02", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/t2RihsGVmf"
+                    ], 
+                    "score": 138.0, 
+                    "sentiment": "positive", 
+                    "keyword": "Newly released drone"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/02/01", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/RUJArF1TQh"
+                    ], 
+                    "score": 191.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Islamic State"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/30", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/YkeuQY8uT2"
+                    ], 
+                    "score": 49.0, 
+                    "sentiment": "positive", 
+                    "keyword": "Iraqi Kurdish officials"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/29", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/gWlZuK7vMT"
+                    ], 
+                    "score": 58.0, 
+                    "sentiment": "neutral", 
+                    "keyword": "Syrian state-run media"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/28", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/j67DLhClIg"
+                    ], 
+                    "score": 97.0, 
+                    "sentiment": "negative", 
+                    "keyword": "ISIS"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/27", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/LcGeT8CvsT"
+                    ], 
+                    "score": 50.0, 
+                    "sentiment": "negative", 
+                    "keyword": "baggage handler"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/26", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/Ab8gEcmrXc"
+                    ], 
+                    "score": 30.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Assad"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/25", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/KpfmfuleRv"
+                    ], 
+                    "score": 40.0, 
+                    "sentiment": "neutral", 
+                    "keyword": "opposition forces"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/24", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/hsKqc4RiHl"
+                    ], 
+                    "score": 37.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Iraq Situation Report"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/23", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/aKEfSVyBUI"
+                    ], 
+                    "score": 77.0, 
+                    "sentiment": "negative", 
+                    "keyword": "northwestern Latakia province"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/22", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/ijp0vLlqO2"
+                    ], 
+                    "score": 40.0, 
+                    "sentiment": "neutral", 
+                    "keyword": "Deir ez-Zour Province"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/21", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/LzTAZUVlso"
+                    ], 
+                    "score": 88.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Shiite militias"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/20", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/Q0Hx1G5XtV"
+                    ], 
+                    "score": 38.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Islamic State"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/16", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/2FXYyoJhbt"
+                    ], 
+                    "score": 53.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Russian Airstrikes"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/15", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/IrmizypXBz"
+                    ], 
+                    "score": 85.0, 
+                    "sentiment": "negative", 
+                    "keyword": "national security"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/14", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/YJnjTN17yx"
+                    ], 
+                    "score": 325.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Burkina Faso"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/13", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/h9YtZ7SfRJ"
+                    ], 
+                    "score": 99.0, 
+                    "sentiment": "negative", 
+                    "keyword": "attack"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/12", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/i55Pen7TOJ"
+                    ], 
+                    "score": 66.0, 
+                    "sentiment": "neutral", 
+                    "keyword": "State John Kerry"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/11", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/69UYsbeueC"
+                    ], 
+                    "score": 47.0, 
+                    "sentiment": "negative", 
+                    "keyword": "opposition groups"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/10", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/CUdmD5FaUj"
+                    ], 
+                    "score": 64.0, 
+                    "sentiment": "negative", 
+                    "keyword": "ISIS activity"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/08", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/AurdtgtmNp"
+                    ], 
+                    "score": 28.0, 
+                    "sentiment": "neutral", 
+                    "keyword": "Tel Abyad"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/06", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/KvXGl4EC2K"
+                    ], 
+                    "score": 62.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Islamic State"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/05", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/5FX9L06L8V"
+                    ], 
+                    "score": 235.0, 
+                    "sentiment": "negative", 
+                    "keyword": "North Korea"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/04", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/MI33ePUWLb"
+                    ], 
+                    "score": 793.0, 
+                    "sentiment": "negative", 
+                    "keyword": "North Korea"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2016/01/03", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/GgUFxcGA8b"
+                    ], 
+                    "score": 98.0, 
+                    "sentiment": "neutral", 
+                    "keyword": "Sheikh Meskin"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2015/12/31", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/ZfCtrR8GM3"
+                    ], 
+                    "score": 175.0, 
+                    "sentiment": "negative", 
+                    "keyword": "ISIS"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2015/12/30", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/sFfhsxkQNP"
+                    ], 
+                    "score": 71.0, 
+                    "sentiment": "neutral", 
+                    "keyword": "Aleppo City"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2015/12/29", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/VnYSlmzkMD"
+                    ], 
+                    "score": 40.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Islamic State"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2015/12/28", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/CvFedVhofg"
+                    ], 
+                    "score": 139.0, 
+                    "sentiment": "neutral", 
+                    "keyword": "Jaysh al-Islam"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2015/12/27", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/TwasINJRKY"
+                    ], 
+                    "score": 97.0, 
+                    "sentiment": "negative", 
+                    "keyword": "ISF"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2015/12/26", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/fUU6tkfapR"
+                    ], 
+                    "score": 41.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Islamic State"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2015/12/24", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/cGmgMhybP6"
+                    ], 
+                    "score": 157.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Islamic State"
+                }
+            ]
+        }, 
+        {
+            "timestamp": "2015/12/23", 
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/B2Mhi6HIYS"
+                    ], 
+                    "score": 30.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Shiite militias"
+                }
+            ]
+        }, 
+        {
             "timestamp": "2015/12/22", 
             "list": [
                 {
                     "url": [
-                        "https://t.co/Y6opeIwMK3"
+                        "https://t.co/LuVhgJaHAF"
                     ], 
-                    "score": 40.0, 
-                    "sentiment": "neutral", 
-                    "keyword": "Syrian President Bashar"
+                    "score": 27.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Aleppo Province"
                 }
             ]
         }, 
@@ -20,7 +462,7 @@
                     "url": [
                         "https://t.co/c69myOHkTB"
                     ], 
-                    "score": 76.0, 
+                    "score": 85.0, 
                     "sentiment": "negative", 
                     "keyword": "Iranian proxy militias"
                 }
@@ -33,7 +475,7 @@
                     "url": [
                         "https://t.co/PKKlk89HFm"
                     ], 
-                    "score": 176.0, 
+                    "score": 175.0, 
                     "sentiment": "negative", 
                     "keyword": "Detective Lemm"
                 }
@@ -44,11 +486,11 @@
             "list": [
                 {
                     "url": [
-                        "https://t.co/Ms3HbMdcTO"
+                        "https://t.co/T4dKwpowGI"
                     ], 
-                    "score": 35.0, 
+                    "score": 27.0, 
                     "sentiment": "negative", 
-                    "keyword": "Islamic State"
+                    "keyword": "security forces"
                 }
             ]
         }, 
@@ -59,7 +501,7 @@
                     "url": [
                         "https://t.co/iU3Kl4iSqR"
                     ], 
-                    "score": 499.0, 
+                    "score": 500.0, 
                     "sentiment": "neutral", 
                     "keyword": "15-member council reached rare agreement on"
                 }
@@ -70,11 +512,11 @@
             "list": [
                 {
                     "url": [
-                        "https://t.co/fTfppXgdUS"
+                        "https://t.co/y4yyeSpdB7"
                     ], 
-                    "score": 86.0, 
+                    "score": 94.0, 
                     "sentiment": "negative", 
-                    "keyword": "San Bernardino"
+                    "keyword": "Islamic State"
                 }
             ]
         }, 
@@ -83,11 +525,11 @@
             "list": [
                 {
                     "url": [
-                        "https://t.co/Yhlyvsd4NY"
+                        "https://t.co/HTihNgDQYz"
                     ], 
-                    "score": 60.0, 
+                    "score": 28.0, 
                     "sentiment": "negative", 
-                    "keyword": "Isis"
+                    "keyword": "iraqi prime minister"
                 }
             ]
         }, 
@@ -124,7 +566,7 @@
                     "url": [
                         "https://t.co/15t9nYl6Bz"
                     ], 
-                    "score": 102.0, 
+                    "score": 101.0, 
                     "sentiment": "negative", 
                     "keyword": "Russian airstrikes"
                 }
@@ -137,7 +579,7 @@
                     "url": [
                         "https://t.co/GMh0IjWIYK"
                     ], 
-                    "score": 454.0, 
+                    "score": 449.0, 
                     "sentiment": "negative", 
                     "keyword": "fake syrian passports"
                 }
@@ -163,7 +605,7 @@
                     "url": [
                         "https://t.co/Z4xH3psITM"
                     ], 
-                    "score": 123.0, 
+                    "score": 122.0, 
                     "sentiment": "negative", 
                     "keyword": "service members"
                 }
@@ -191,7 +633,7 @@
                     ], 
                     "score": 302.0, 
                     "sentiment": "negative", 
-                    "keyword": "Soufan Group"
+                    "keyword": "Islamic State"
                 }
             ]
         }, 
@@ -202,7 +644,7 @@
                     "url": [
                         "https://t.co/bsmUt7znHS"
                     ], 
-                    "score": 306.0, 
+                    "score": 299.0, 
                     "sentiment": "negative", 
                     "keyword": "Tashfeen Malik"
                 }
@@ -215,7 +657,7 @@
                     "url": [
                         "https://t.co/weuNuWVWJc"
                     ], 
-                    "score": 270.0, 
+                    "score": 268.0, 
                     "sentiment": "negative", 
                     "keyword": "ISIS"
                 }
@@ -239,9 +681,10 @@
             "list": [
                 {
                     "url": [
-                        "https://t.co/h3oJWFHhSF"
+                        "https://t.co/K9QfecT6UC", 
+                        "https://t.co/gjFMOvxqjP"
                     ], 
-                    "score": 67.0, 
+                    "score": 89.0, 
                     "sentiment": "positive", 
                     "keyword": "Twitter stores"
                 }
@@ -254,7 +697,7 @@
                     "url": [
                         "https://t.co/93UtJHFPZ1"
                     ], 
-                    "score": 149.0, 
+                    "score": 144.0, 
                     "sentiment": "negative", 
                     "keyword": "Russia"
                 }
@@ -293,7 +736,7 @@
                     "url": [
                         "https://t.co/fQ7CkvU2mi"
                     ], 
-                    "score": 86.0, 
+                    "score": 85.0, 
                     "sentiment": "negative", 
                     "keyword": "Putin"
                 }
@@ -319,7 +762,7 @@
                     "url": [
                         "https://t.co/7vxAdo6om4"
                     ], 
-                    "score": 123.0, 
+                    "score": 122.0, 
                     "sentiment": "negative", 
                     "keyword": "Kurdistan Democratic Party"
                 }
@@ -332,7 +775,7 @@
                     "url": [
                         "https://t.co/7IyHLE61YT"
                     ], 
-                    "score": 511.0, 
+                    "score": 507.0, 
                     "sentiment": "negative", 
                     "keyword": "Russian air incursions"
                 }
@@ -346,7 +789,7 @@
                         "https://t.co/cjSP0WjOrf", 
                         "https://t.co/rR7w3K3xOo"
                     ], 
-                    "score": 627.0, 
+                    "score": 617.0, 
                     "sentiment": "negative", 
                     "keyword": "terrorist attacks"
                 }
@@ -386,7 +829,7 @@
                     "url": [
                         "https://t.co/9PiLFel3n0"
                     ], 
-                    "score": 198.0, 
+                    "score": 196.0, 
                     "sentiment": "negative", 
                     "keyword": "chemical weapons"
                 }
@@ -451,7 +894,7 @@
                     "url": [
                         "https://t.co/60FqF5YFYq"
                     ], 
-                    "score": 121.0, 
+                    "score": 120.0, 
                     "sentiment": "negative", 
                     "keyword": "ISIS"
                 }
@@ -464,7 +907,7 @@
                     "url": [
                         "https://t.co/4toVExMUeS"
                     ], 
-                    "score": 352.0, 
+                    "score": 350.0, 
                     "sentiment": "neutral", 
                     "keyword": "Fran\u00e7ois Molins"
                 }
@@ -490,7 +933,7 @@
                     "url": [
                         "https://t.co/hlri6XE5Gy"
                     ], 
-                    "score": 100.0, 
+                    "score": 98.0, 
                     "sentiment": "negative", 
                     "keyword": "Islamic State"
                 }
@@ -503,7 +946,7 @@
                     "url": [
                         "https://t.co/OxrlBLmvq7"
                     ], 
-                    "score": 57.0, 
+                    "score": 56.0, 
                     "sentiment": "negative", 
                     "keyword": "Russian airstrikes"
                 }
@@ -516,7 +959,7 @@
                     "url": [
                         "https://t.co/wFMxt6xAhW"
                     ], 
-                    "score": 56.0, 
+                    "score": 55.0, 
                     "sentiment": "negative", 
                     "keyword": "Syrian regime"
                 }
@@ -529,7 +972,7 @@
                     "url": [
                         "https://t.co/wCdrQXfu8r"
                     ], 
-                    "score": 75.0, 
+                    "score": 76.0, 
                     "sentiment": "negative", 
                     "keyword": "russian airstrikes"
                 }
@@ -594,7 +1037,7 @@
                     "url": [
                         "https://t.co/O7TnsdB7TG"
                     ], 
-                    "score": 91.0, 
+                    "score": 90.0, 
                     "sentiment": "negative", 
                     "keyword": "russian airstrikes"
                 }
@@ -618,11 +1061,11 @@
             "list": [
                 {
                     "url": [
-                        "https://t.co/eD51Anoovv"
+                        "https://t.co/gTopfSmmSA"
                     ], 
-                    "score": 46.0, 
+                    "score": 45.0, 
                     "sentiment": "negative", 
-                    "keyword": "Special Operations forces"
+                    "keyword": "Russian Airstrikes"
                 }
             ]
         }, 
@@ -653,13 +1096,13 @@
             ]
         }, 
         {
-            "timestamp": "2015/10/26", 
+            "timestamp": "2015/10/25", 
             "list": [
                 {
                     "url": [
                         "https://t.co/wBI2LQDCkA"
                     ], 
-                    "score": 53.0, 
+                    "score": 52.0, 
                     "sentiment": "neutral", 
                     "keyword": "Russian Military Activity"
                 }
@@ -670,11 +1113,11 @@
             "list": [
                 {
                     "url": [
-                        "https://t.co/Td3lqH7ZkC"
+                        "https://t.co/Xj1IX3q8Hg"
                     ], 
-                    "score": 159.0, 
-                    "sentiment": "negative", 
-                    "keyword": "russian airstrikes"
+                    "score": 32.0, 
+                    "sentiment": "neutral", 
+                    "keyword": "Kurdistan Region Security"
                 }
             ]
         }, 
@@ -698,37 +1141,15 @@
                     "url": [
                         "https://t.co/tUaNJ81RYt"
                     ], 
-                    "score": 49.0, 
+                    "score": 48.0, 
                     "sentiment": "negative", 
                     "keyword": "social media"
                 }
             ]
         }, 
         {
-            "timestamp": "2015/10/20", 
-            "list": [
-                {
-                    "url": [
-                        "https://t.co/UdHKyHHoiM"
-                    ], 
-                    "score": 177.0, 
-                    "sentiment": "negative", 
-                    "keyword": "Aleppo City"
-                }
-            ]
-        }, 
-        {
             "timestamp": "2015/10/19", 
-            "list": [
-                {
-                    "url": [
-                        "https://t.co/uxLpVFcqQp"
-                    ], 
-                    "score": 51.0, 
-                    "sentiment": "neutral", 
-                    "keyword": "Indiana Air National"
-                }
-            ]
+            "list": []
         }, 
         {
             "timestamp": "2015/10/17", 
@@ -745,27 +1166,18 @@
         }, 
         {
             "timestamp": "2015/10/16", 
-            "list": [
-                {
-                    "url": [
-                        "http://t.co/wM0zTgkga5"
-                    ], 
-                    "score": 104.0, 
-                    "sentiment": "negative", 
-                    "keyword": "Syrian regime"
-                }
-            ]
+            "list": []
         }, 
         {
             "timestamp": "2015/10/15", 
             "list": [
                 {
                     "url": [
-                        "http://t.co/3VdkeaQWIQ"
+                        "http://t.co/IM98QE6hby"
                     ], 
-                    "score": 83.0, 
+                    "score": 58.0, 
                     "sentiment": "negative", 
-                    "keyword": "Sunni extremist group"
+                    "keyword": "Islamic State"
                 }
             ]
         }, 
@@ -774,39 +1186,17 @@
             "list": [
                 {
                     "url": [
-                        "http://t.co/GcMnunjs9U"
+                        "http://t.co/Tad515Znzf"
                     ], 
-                    "score": 120.0, 
+                    "score": 34.0, 
                     "sentiment": "negative", 
-                    "keyword": "Afghanistan"
-                }
-            ]
-        }, 
-        {
-            "timestamp": "2015/10/13", 
-            "list": [
-                {
-                    "url": [
-                        "http://t.co/1atP4KoUn0"
-                    ], 
-                    "score": 221.0, 
-                    "sentiment": "negative", 
-                    "keyword": "Syrian regime"
+                    "keyword": "Iraq Situation Report"
                 }
             ]
         }, 
         {
             "timestamp": "2015/10/12", 
-            "list": [
-                {
-                    "url": [
-                        "http://t.co/iNZPSN5aBU"
-                    ], 
-                    "score": 137.0, 
-                    "sentiment": "negative", 
-                    "keyword": "Islamic State"
-                }
-            ]
+            "list": []
         }, 
         {
             "timestamp": "2015/10/09", 
@@ -848,32 +1238,6 @@
             ]
         }, 
         {
-            "timestamp": "2015/10/04", 
-            "list": [
-                {
-                    "url": [
-                        "http://t.co/1EtKnADg8x"
-                    ], 
-                    "score": 123.0, 
-                    "sentiment": "neutral", 
-                    "keyword": "Financial Times"
-                }
-            ]
-        }, 
-        {
-            "timestamp": "2015/10/03", 
-            "list": [
-                {
-                    "url": [
-                        "http://t.co/8fuis1gYLf"
-                    ], 
-                    "score": 27.0, 
-                    "sentiment": "negative", 
-                    "keyword": "Afghan security forces"
-                }
-            ]
-        }, 
-        {
             "timestamp": "2015/10/02", 
             "list": []
         }, 
@@ -886,47 +1250,30 @@
             "list": [
                 {
                     "url": [
-                        "http://t.co/hrpNXyHAMA"
+                        "https://t.co/HQHZMkC1Go"
                     ], 
-                    "score": 70.0, 
-                    "sentiment": "negative", 
-                    "keyword": "Lebanese Hezbollah allies"
+                    "score": 45.0, 
+                    "sentiment": "positive", 
+                    "keyword": "special forces"
                 }
             ]
         }, 
         {
             "timestamp": "2015/09/29", 
-            "list": [
-                {
-                    "url": [
-                        "http://t.co/HG9qWidLhg"
-                    ], 
-                    "score": 94.0, 
-                    "sentiment": "negative", 
-                    "keyword": "Islamic State"
-                }
-            ]
-        }, 
-        {
-            "timestamp": "2015/09/22", 
-            "list": [
-                {
-                    "url": [
-                        "http://t.co/CozFCqTS9H"
-                    ], 
-                    "score": 38.0, 
-                    "sentiment": "negative", 
-                    "keyword": "Syrian refugee crisis"
-                }
-            ]
-        }, 
-        {
-            "timestamp": "2015/09/17", 
             "list": []
         }, 
         {
             "timestamp": "2015/09/08", 
-            "list": []
+            "list": [
+                {
+                    "url": [
+                        "https://t.co/n1Ai7qjEEe"
+                    ], 
+                    "score": 36.0, 
+                    "sentiment": "negative", 
+                    "keyword": "Taliban control"
+                }
+            ]
         }, 
         {
             "timestamp": "2015/06/17", 
@@ -948,9 +1295,9 @@
                     "url": [
                         "https://t.co/oYr5twr8Gi"
                     ], 
-                    "score": 63.0, 
+                    "score": 60.0, 
                     "sentiment": "negative", 
-                    "keyword": "Libya Libya ISIS"
+                    "keyword": "Egypt Egypt ISIS"
                 }
             ]
         }, 
@@ -987,23 +1334,9 @@
                     "url": [
                         "https://t.co/XpVY4cn50h"
                     ], 
-                    "score": 101.0, 
+                    "score": 104.0, 
                     "sentiment": "neutral", 
                     "keyword": "newly trained snipers"
-                }
-            ]
-        }, 
-        {
-            "timestamp": "1970/08/22", 
-            "list": [
-                {
-                    "url": [
-                        "https://t.co/1iDZHoigxZ", 
-                        "https://t.co/wFC9lFaLm5"
-                    ], 
-                    "score": 30.0, 
-                    "sentiment": "neutral", 
-                    "keyword": "Bowe Bergdahl"
                 }
             ]
         }, 
@@ -1012,11 +1345,12 @@
             "list": [
                 {
                     "url": [
-                        "https://t.co/ZN79cWquow"
+                        "https://t.co/1iDZHoigxZ", 
+                        "https://t.co/wFC9lFaLm5"
                     ], 
-                    "score": 140.0, 
-                    "sentiment": "negative", 
-                    "keyword": "group"
+                    "score": 30.0, 
+                    "sentiment": "positive", 
+                    "keyword": "deadliest mass shooting"
                 }
             ]
         }, 

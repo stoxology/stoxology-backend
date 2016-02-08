@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Stoxology - Stock Price Visualisation With Social Media News</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom styles for d3 -->
+    <link href="css/stox-style.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div id="home" class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Stoxology</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#data">Data</a></li>
+            <li><a href="#credit">Credit</a></li>
+            <li><a href="#resources">Resources</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <section>
+      <div class="bg"></div>
+      <div class="jumbotron">
+        <div class="container">
+          <img class ="logo-img" src="img/stoxology_logo.png" alt="Stoxology Logo">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="intro" class="container intro">
+        <div class="title">Stock Prices</div>
+        <div class="text">
+          <p>In economics and financial theory, analysts use random walk techniques to model behavior of asset prices, in particular share prices on stock markets, currency exchange rates and commodity prices. This practice has its basis in the presumption that investors act rationally and without biases, and that at any moment they estimate the value of an asset based on future expectations. Under these conditions, all existing information affects the price, which changes only when new information comes out. By definition, new information appears randomly and influences the asset price randomly.
+
+          Empirical studies have demonstrated that prices do not completely follow random walks.[1] Low serial correlations (around 0.05) exist in the short term, and slightly stronger correlations over the longer term. Their sign and the strength depend on a variety of factors.</p>
+
+          <p>Researchers have found that some of the biggest price deviations from random walks result from seasonal and temporal patterns. In particular, returns in January significantly exceed those in other months (January effect) and on Mondays stock prices go down more than on any other day. Observers have noted these effects in many different markets for more than half a century, but without succeeding in giving a completely satisfactory explanation for their persistence.</p>
+
+          <p> Technical analysis uses most of the anomalies to extract information on future price movements from historical data. But some economists, for example Eugene Fama, argue that most of these patterns occur accidentally, rather than as a result of irrational or inefficient behavior of investors: the huge amount of data available to researchers for analysis allegedly causes the fluctuations.</p>
+          <p> Technical analysis uses most of the anomalies to extract information on future price movements from historical data. But some economists, for example Eugene Fama, argue that most of these patterns occur accidentally, rather than as a result of irrational or inefficient behavior of investors: the huge amount of data available to researchers for analysis allegedly causes the fluctuations.</p>
+          
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="data" class="title">Lockheed Martin Corporation 10/2015 - 02/2016</div>
+      <div class="diagram"></div>
+    </section>
+
+    <section>
+      <div id="credit" class="container credit">
+        <div class="title">Credit</div>
+        <ul class="credit-list">
+            <li>J Butler</li>
+            <li>Jaime Clanger</li>
+            <li>Nhim Kova</li>
+          </ul>
+      </div>
+    </section>
+    
+    <!-- D3
+    ================================================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script>
+      //Date parser
+        var parseDate = d3.time.format("%Y/%m/%d");
+
+        var margin = {top: 20, right: 20, bottom: 30, left: 40},
+            width = 960 - margin.left - margin.right,
+            height = 450 - margin.top - margin.bottom;
+
+        var x = d3.time.scale.utc()
+            .range([0, width]);
+
+        var y = d3.scale.linear()
+            .range([height, 0]);
+
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom");
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left");
+
+        var svg = d3.select(".diagram").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var tip = d3.tip()
+          .attr('class', 'd3-tip')
+          //.offset([-10, 0])
+          .html(function(d) {
+            return "<span style='color:" +  direction(d.dailychange) + "'>" + (d.dailychange*100).toFixed(2) + "% </span>" + "<span style='color:orange'>" + d.keyword + "</span>";
+          })
+
+        svg.call(tip);
+
+        d3.selection.prototype.moveToFront = function() {
+          return this.each(function(){
+            this.parentNode.appendChild(this);
+          });
+        };
+
+        d3.selection.prototype.moveToBack = function() {  
+                return this.each(function() { 
+                var firstChild = this.parentNode.firstChild; 
+                if (firstChild) { 
+                    this.parentNode.insertBefore(this, firstChild); 
+                } 
+              }); 
+            };
+
+        // Reading in the data
+
+        d3.csv("test.csv", type, function(error, data) {
+          if (error) throw error;
+
+          console.log(data)
+
+          var color = d3.scale.ordinal()
+          .domain(["positive", "negative", "neutral"])
+          .range(["#66ff66", "#ED66AC" , "#b3ffff"]);
+
+          var darkcolor = d3.scale.ordinal()
+          .domain(["positive", "negative", "neutral"])
+          .range(["#128C12", "#AB276C" , "#1CBABA"]);
+
+          x.domain([ new Date(data[ data.length - 1].date), new Date(data[0].date)])
+            .rangeRound([0, width - margin.left - margin.right]);
+
+          ymin = d3.min(data, function(d) { return d.price - 10.0; });
+          ymax = d3.max(data, function(d) { return d.price + 10.0; });
+
+          y.domain([ ymin, ymax ]);
+
+          svg.append("g")
+              .attr("class", "x axis")
+              .attr("transform", "translate(0," + height + ")")
+              .call(xAxis)
+            .append("text")
+              .attr("class", "label")
+              .attr("x", width)
+              .attr("y", -6)
+              .style("text-anchor", "end")
+              .text("Date");
+
+          svg.append("g")
+              .attr("class", "y axis")
+              .call(yAxis)
+            .append("text")
+              .attr("class", "label")
+              .attr("transform", "rotate(-90)")
+              .attr("y", 6)
+              .attr("dy", ".71em")
+              .style("text-anchor", "end")
+              .text("Price")
+
+          svg.selectAll("circle")
+              .data(data)
+              .enter()
+              .append("circle")
+                //.attr("class", "circle")
+                .attr("cx", function(d) { return x(d.date); })
+                .attr("cy", function(d) { return y(d.price); })
+                .attr("r", function(d) { return Math.sqrt(d.score); })
+                .style("fill", function(d) { return color(d.sentiment); });
+
+        //Mouse over events for tooltip and circle transition
+            d3.selectAll("circle")
+              .on("mouseover", function(d) {
+                d3.select(this).style("fill", function(d) { return darkcolor(d.sentiment); } );
+                d3.select(this).moveToFront();
+                tip.show(d);
+            } )
+              .on("mouseout", function(d) {
+                d3.select(this).style("fill", function(d) { return color(d.sentiment); });
+                d3.select(this).moveToBack();
+            } );
+
+          var legend = svg.selectAll(".legend")
+              .data(color.domain())
+            .enter().append("g")
+              .attr("class", "legend")
+              .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+          legend.append("rect")
+              .attr("x", width - 18)
+              .attr("width", 18)
+              .attr("height", 18)
+              .style("fill", color);
+
+          legend.append("text")
+              .attr("x", width - 24)
+              .attr("y", 9)
+              .attr("dy", ".35em")
+              .style("text-anchor", "end")
+              .style("fill", "white")
+              .text(function(d) { return d; });
+
+        });
+
+        function type(d) {
+          d.price = +d.price;
+          d.dailychange = d.dailychange;
+          console.log(d.dailychange);
+          d.sentiment = d.sentiment;
+          d.score = +d.score;
+          d.date = parseDate.parse(d.date);
+          d.keyword = d.keyword;
+
+          return d;
+        }
+
+        function direction(x) {
+          if (x < 0.0) return "red";
+          else return "lime";
+
+        }
+
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>

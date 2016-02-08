@@ -8,7 +8,7 @@ totalListOfKeywords = []
 
 articles_list = data
 
-#Delete empty objects
+#Delete empty objects and 
 for article in list(articles_list) :
 	if article["keywordResults"][0] is None :
 		articles_list.remove(article)
@@ -16,6 +16,7 @@ for article in list(articles_list) :
 		for item in article["keywordResults"][0]["keywordDetails"] :
 			totalListOfKeywords.append( item["keyword"])
 
+#Get frequency of words
 cnt = collections.Counter()
 
 for word in totalListOfKeywords :
