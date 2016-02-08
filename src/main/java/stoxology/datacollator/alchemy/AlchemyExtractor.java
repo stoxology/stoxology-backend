@@ -18,7 +18,7 @@ import stoxology.datacollator.alchemy.entities.KeywordResult;
 import stoxology.datacollator.alchemy.entities.Result;
 
 public class AlchemyExtractor {
-	public static final String API_KEY = "4bfcda315cafac05e00c8eeddb4a2b2b034584d2";
+	public static final String API_KEY = "d4a148d67b6740b46adc7c9427f3881ac9a5d3ed";
 	public static final String SENTIMENT = "http://gateway-a.watsonplatform.net/calls/url/URLGetTextSentiment";
 	public static final String FULL_SENTIMENT = SENTIMENT + "?apikey=" + API_KEY + "&outputMode=json&url=%s";
 	public static final String FULL_COMBINED = "http://gateway-a.watsonplatform.net/calls/url/URLGetCombinedData"
@@ -30,6 +30,9 @@ public class AlchemyExtractor {
 		String data = Utility.getUrlData(String.format(FULL_COMBINED, url));
 
 		AlchemyCombined alchemyData = Utility.convertToObject(AlchemyCombined.class, data);
+		if (alchemyData == null)
+			return null;
+		
 		StringBuilder targetedWords = new StringBuilder();
 
 		for (Keyword keyword : alchemyData.getKeywords()) {
